@@ -3,11 +3,18 @@ import { RepositoryItem } from "./RepositpryItem";//Aqui eu estou importando Rep
 
 import '../styles/repositores.scss';//Aqui é a importacao do styles css
 
+
+interface Repository{
+  name:string;
+  description:string;
+  html_url:string;
+}
+
 // Essa é a função
 export function RepositoryList(){
 
   //O useState nao muda a variavel primaria, só acressenta.
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   //Aqui eu seto oque eu quero pegar dentro de useEffect.
   useEffect(() => {
